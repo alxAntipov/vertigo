@@ -10,6 +10,7 @@ const config = require('./config')
 
 let categoriesRoutes = require('./routes/categories')
 let comicsRoutes = require('./routes/comics')
+let userRoutes = require('./routes/user')
 
 // Setup
 let apiServer = express()
@@ -33,6 +34,6 @@ apiServer.use(cookieParser())
 // Routes
 apiServer.use(categoriesRoutes)
 apiServer.use(comicsRoutes)
-
+apiServer.use(userRoutes)
 // Export
 module.exports = apiServer

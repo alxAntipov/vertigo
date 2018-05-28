@@ -16,6 +16,9 @@ import Layout from 'containers/layout';
 import Comics from 'containers/comics';
 import ComicsBook from 'containers/comicsBook';
 import Basket from 'containers/basket';
+import User from 'containers/user';
+import login from 'components/login';
+import register from 'components/register';
 
 const store = createStore(reducers, composeWithDevTools(
     applyMiddleware(thunk)
@@ -32,6 +35,10 @@ ReactDOM.render(
                 <Route path='categories/:id' component={Comics} />
             </Route>
             <Route path='/basket' component={Basket} />
+            <Route component={User}>
+                <Route path='user/login' component={login} />
+                <Route path='user/register' component={register} />
+            </Route>
         </Router>
     </Provider>,
     document.getElementById('root')
